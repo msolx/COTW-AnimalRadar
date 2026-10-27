@@ -1,9 +1,10 @@
 {
-  "source_scope": "radar_only",
-  "original_git_history_included": false,
-  "release_zip_sha256": "50c9d6a7e5731c1a1d40a90baaecea2c23d6e79f0ec50257c0134d3474276756",
-  "release_executable_sha256": "daaadb93f21a851f826bec0b162b28365be4394a646a9d0c7b2e5f26d21d4f02",
-  "binary_comparison_method": "Python bytecode, names, flags, exception table, recursive constants; filenames/line numbers ignored",
+  "version": "1.1.0",
+  "artifact": "COTW_Toolkit/COTW_AnimalRadar.exe",
+  "executable_sha256": "d7612ce5eecdc0053ff1931729fae1efb16fc8cfc9370ab9411f1b52f59dd39c",
+  "original_game_assets_included": false,
+  "original_private_git_history_included": false,
+  "binary_comparison_method": "Python bytecode, names, flags, exception table and recursive constants; ignores filenames and line tables",
   "module_comparison": [
     {
       "module": "config",
@@ -43,6 +44,11 @@
     {
       "module": "services.attribute_resolver",
       "source": "services/attribute_resolver.py",
+      "instructions_and_constants_match": true
+    },
+    {
+      "module": "services.calibration",
+      "source": "services/calibration.py",
       "instructions_and_constants_match": true
     },
     {

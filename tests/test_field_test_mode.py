@@ -47,3 +47,29 @@ class FieldTestModeTests(unittest.TestCase):
             profile.write_text(json.dumps(data),encoding='utf-8')
             with self.assertRaises(UnsupportedBuild):
                 load_field_test_offsets(root,digest)
+
+    def test_candidate_profile_returns_fallback_only_when_allowed(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            cand_hash = 'a' * 64
+            cand_profile = {
+                "mode": "field_test",
+                "sha256": cand_hash,
+                "candidate": True,
+                "core_verified": False,
+                "validation": {"date": "2026-10-27", "notes": "candidate test"},
+                "offsets": {
+                    "animals": 40486008, "camera": 41841396, "manager_vector": 712,
+                    "species": 40, "position": 328, "ragdoll": 192
+                }
+            }
+            (root / 'field_test_cand.json').write_text(json.dumps(cand_profile), encoding='utf-8')
+            with self.assertRaises(UnsupportedBuild):
+                load_field_test_offsets(root, cand_hash, allow_fallback=False)
+            res = load_field_test_offsets(root, cand_hash, allow_fallback=True)
+            self.assertTrue(res['is_fallback'])
+            self.assertNotIn('hp', res)
+            self.assertNotIn('camera_world', res)
+            self.assertNotIn('identity_seed', res)
+            for req in ('animals', 'camera', 'manager_vector', 'species', 'position', 'ragdoll'):
+                self.assertIn(req, res)

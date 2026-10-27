@@ -66,15 +66,20 @@ class LiveSource:
                 self.connection_state = 'connecting'
                 self.memory.connect()
                 if self.field_test:
-                    offsets = load_field_test_offsets(OFFSETS_DIR,self.memory.sha256)
+                    offsets = load_field_test_offsets(OFFSETS_DIR,self.memory.sha256,allow_fallback=True)
                     self.reader = AnimalReader(self.memory,offsets,health_verified=all(k in offsets for k in ('hp','hpmax')),
                                                max_entities=config.FIELD_TEST_MAX_ENTITIES,
                                                identity_enabled=self.attributes is not None)
+                    self.is_fallback = offsets.get('is_fallback',False)
                 else:
                     self.reader = AnimalReader(self.memory,load_offsets(OFFSETS_DIR,self.memory.sha256))
+                    self.is_fallback = False
                 self.connections += 1
                 new_connection = self.connections > 1
             result = self.reader.scan()
+            if getattr(self,'is_fallback',False):
+                compat_msg = f'通用兼容模式（哈希 {self.memory.sha256[:8]}...）· '
+                result = replace(result,message=compat_msg+result.message)
             if self.attributes:
                 self.attributes.refresh()
                 result = replace(result,animals=tuple(self.attributes.enrich(a) for a in result.animals),

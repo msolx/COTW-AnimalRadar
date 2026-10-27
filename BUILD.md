@@ -70,12 +70,12 @@ Get-FileHash .\dist\COTW_AnimalRadar\COTW_AnimalRadar.exe -Algorithm SHA256
 
 Any new build may have different EXE/ZIP bytes due to environment and packaging metadata. These instructions support rebuilding and code inspection; they do **not** promise a bit-for-bit identical executable or an antivirus result.
 
-For the previously uploaded v1.0.0 package hashes and the source comparison, see [docs/SOURCE_PROVENANCE.md](docs/SOURCE_PROVENANCE.md). A rebuilt file's hash must not be represented as the old uploaded file's hash.
+For the examined v1.1.0 executable hashes and the source comparison, see [docs/SOURCE_PROVENANCE.md](docs/SOURCE_PROVENANCE.md). A rebuilt file's hash must not be represented as the old uploaded file's hash.
 
 ## Review boundaries
 
-- `memory/` and `services/live.py`: standard user-mode, read-only process access with exact game-build and structure checks.
-- `services/overlay_windows.py`: window discovery, the independent overlay and hotkeys; no game rendering hook.
+- `memory/` and `services/live.py`: standard user-mode, read-only process access with verified/candidate profiles, experimental hash fallback and structure checks.
+- `services/overlay_windows.py`: window discovery, the independent overlay/window handling; no game rendering hook.
 - `services/population_file.py`: read-only SAVE/ADF population parser with stable-file checks.
 - No Solo Helper modules, archive patcher, teleportation, pressure editor or memory writer are included.
 - The local unit test result is not a substitute for a fresh-machine installation check or real-game validation. A code review or build does not clear a Nexus quarantine automatically.

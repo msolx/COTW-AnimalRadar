@@ -8,11 +8,11 @@ This repository contains the **radar only**. It does not contain Solo Helper, te
 
 ## Supported environment
 
-- Windows 10/11 x64; Steam installation; single-player use.
+- Windows 10/11 x64; single-player use. Steam/Epic/custom installation directories can be detected or selected; this is not a claim of all-channel live validation.
 - Tested game Steam build **25131233**, executable SHA256:
   `89dbab025114090c91a63ae7f0533ee84eee3c48f4b8543224b359c31b794c22`.
 - Development/build: Python **3.12 x64** and `PySide6-Essentials==6.8.3`.
-- Other game builds are rejected. Supporting a new update may require code and resource validation, not just editing a number in an offsets file.
+- v1.1.0 adds experimental compatibility attempts for other executable hashes. Steam build **26051119** (`33c8306e52c5541a5b87e4af576f4149f3da0c23b36775372ec6c41adbab73ca`) is a candidate layout: its exact profile enables experimental core positions only, with health, camera heading and identity fields disabled. Other unknown hashes can fall back to the older profile; that does not validate its field semantics for the new executable. A hash match or successful read is not a complete compatibility test.
 
 ## Features and limits
 
@@ -34,20 +34,20 @@ py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe main.py
 ```
 
-`main.py` explicitly starts the hash-gated real-game/field-test source. Merely importing `config.py` in a source environment still defaults to mock for developer/test callers. The mock data source is labeled and exists for offline tests; it is not game verification.
+`main.py` explicitly starts the real-game/field-test source with experimental fallback. Merely importing `config.py` in a source environment still defaults to mock for developer/test callers. The mock data source is labeled and exists for offline tests; it is not game verification.
 
-1. Start the supported game through Steam and enter a **single-player** reserve.
+1. Start the game through its normal launcher and enter a **single-player** reserve.
 2. Run `main.py`, or run the built `COTW_AnimalRadar.exe` after extracting its **entire** directory.
 3. Select and confirm the correct reserve. Do not mistake a retained manual selection for automatic map detection after changing reserves.
 4. Select a species and radar range; enable north-up if appropriate.
 5. Enable the optional attribute-matching control if desired. No valid/unique save match means no reliable trophy prediction; merely enabling the highlight checkbox does not manufacture a score.
 6. Borderless Windowed game mode is recommended for the overlay. Exclusive fullscreen/multi-monitor/DPI combinations can behave differently.
 
-Overlay shortcuts: **Ctrl+Alt+R** show/hide; **Ctrl+Alt+E** unlock/lock position and size. Shortcut registration may fail if another program uses the same combination.
+Overlay control uses the main-window **Show / Hide Mini-Radar** and **Adjust Mini-Radar** buttons; lock the overlay after positioning it. v1.1.0 does not register global radar hotkeys.
 
 Game and save directories are detected using Steam registry/library information and the Windows Documents location, including registry-based redirection. For multiple numeric save-account directories the current selection uses folder modification time; it is a heuristic, not proof of the active Steam account.
 
-If access is denied, the executable hash is unsupported, or memory structures fail validation, stop and inspect the message. Do not disable antivirus, change game protection, force `verified=true`, or substitute random offsets. An empty species result only means no matching loaded animals were detected.
+If access is denied or memory structures fail validation, stop and inspect the message. Experimental fallback does not prove that a new executable has the same data layout. Do not disable antivirus, change game protection, force `verified=true`, or substitute random offsets. An empty species result only means no matching loaded animals were detected.
 
 ## Build and test
 

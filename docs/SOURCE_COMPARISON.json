@@ -1,0 +1,134 @@
+{
+  "source_scope": "radar_only",
+  "original_git_history_included": false,
+  "release_zip_sha256": "50c9d6a7e5731c1a1d40a90baaecea2c23d6e79f0ec50257c0134d3474276756",
+  "release_executable_sha256": "daaadb93f21a851f826bec0b162b28365be4394a646a9d0c7b2e5f26d21d4f02",
+  "binary_comparison_method": "Python bytecode, names, flags, exception table, recursive constants; filenames/line numbers ignored",
+  "module_comparison": [
+    {
+      "module": "config",
+      "source": "config.py",
+      "instructions_and_constants_match": true
+    },
+    {
+      "module": "memory.animal_reader",
+      "source": "memory/animal_reader.py",
+      "instructions_and_constants_match": true
+    },
+    {
+      "module": "memory.offsets",
+      "source": "memory/offsets.py",
+      "instructions_and_constants_match": true
+    },
+    {
+      "module": "memory.process_reader",
+      "source": "memory/process_reader.py",
+      "instructions_and_constants_match": true
+    },
+    {
+      "module": "models.animal",
+      "source": "models/animal.py",
+      "instructions_and_constants_match": true
+    },
+    {
+      "module": "models.player",
+      "source": "models/player.py",
+      "instructions_and_constants_match": true
+    },
+    {
+      "module": "services.animal_details",
+      "source": "services/animal_details.py",
+      "instructions_and_constants_match": true
+    },
+    {
+      "module": "services.attribute_resolver",
+      "source": "services/attribute_resolver.py",
+      "instructions_and_constants_match": true
+    },
+    {
+      "module": "services.coordinate",
+      "source": "services/coordinate.py",
+      "instructions_and_constants_match": true
+    },
+    {
+      "module": "services.fonts",
+      "source": "services/fonts.py",
+      "instructions_and_constants_match": true
+    },
+    {
+      "module": "services.heading",
+      "source": "services/heading.py",
+      "instructions_and_constants_match": true
+    },
+    {
+      "module": "services.i18n",
+      "source": "services/i18n.py",
+      "instructions_and_constants_match": true
+    },
+    {
+      "module": "services.live",
+      "source": "services/live.py",
+      "instructions_and_constants_match": true
+    },
+    {
+      "module": "services.mock",
+      "source": "services/mock.py",
+      "instructions_and_constants_match": true
+    },
+    {
+      "module": "services.overlay_windows",
+      "source": "services/overlay_windows.py",
+      "instructions_and_constants_match": true
+    },
+    {
+      "module": "services.path_finder",
+      "source": "services/path_finder.py",
+      "instructions_and_constants_match": true
+    },
+    {
+      "module": "services.population_file",
+      "source": "services/population_file.py",
+      "instructions_and_constants_match": true
+    },
+    {
+      "module": "services.reserves",
+      "source": "services/reserves.py",
+      "instructions_and_constants_match": true
+    },
+    {
+      "module": "services.scanner",
+      "source": "services/scanner.py",
+      "instructions_and_constants_match": true
+    },
+    {
+      "module": "services.species",
+      "source": "services/species.py",
+      "instructions_and_constants_match": true
+    },
+    {
+      "module": "services.trophy",
+      "source": "services/trophy.py",
+      "instructions_and_constants_match": true
+    },
+    {
+      "module": "ui.main_window",
+      "source": "ui/main_window.py",
+      "instructions_and_constants_match": true
+    },
+    {
+      "module": "ui.overlay",
+      "source": "ui/overlay.py",
+      "instructions_and_constants_match": true
+    },
+    {
+      "module": "ui.radar_widget",
+      "source": "ui/radar_widget.py",
+      "instructions_and_constants_match": true
+    },
+    {
+      "module": "main",
+      "source": "main.py",
+      "instructions_and_constants_match": true
+    }
+  ]
+}

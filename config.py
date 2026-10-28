@@ -21,6 +21,7 @@ def _find_resource(relative: str) -> Path:
 PROCESS_NAME = 'theHunterCotW_F.exe'
 OFFSETS_DIR = _find_resource('offsets')
 REFRESH_SECONDS = 1
+ACTIVATION_TIMEOUT_MS = 2500  # 重复启动时等待已有实例唤醒；仅本机IPC，不启动第二个扫描器。
 REFRESH_CHOICES = (1, 2, 5)
 RADAR_RANGES = (100, 200, 400)
 RADAR_RANGE = 400

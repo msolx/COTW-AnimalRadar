@@ -1,2 +1,2 @@
-# Core/Gui/Widgets only; no unused Addons. Pinned for reproducibility.
+# Core/Gui/Widgets/Network (local IPC only); no unused Addons.
 PySide6-Essentials==6.8.3

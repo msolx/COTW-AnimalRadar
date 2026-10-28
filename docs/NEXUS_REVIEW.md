@@ -1,44 +1,52 @@
-# Manual review email draft
+# Manual-review email draft (v1.1.1)
 
-The author sends this message from the email associated with the Nexus account. Verify the username and upload the corresponding v1.1.0 artifact before sending. This draft does not send email or certify Nexus/antivirus approval.
-
-For radar ticket 274634, reply to the existing support thread and keep its ticket subject rather than opening a duplicate ticket.
+Reply to existing ticket 274634, preserving its original subject, rather than opening a duplicate ticket. Send from the email associated with your Nexus account. Verify the username (filled from the earlier reply as Zacks) and upload the corresponding v1.1.1 file before sending. This draft does not send email.
 
 ```text
 To: support@nexusmods.com
-Subject: Manual review request - COTW AnimalRadar v1.1.0 (Mod 1194)
+Subject: Updated manual review request - COTW AnimalRadar v1.1.1 (Mod 1194, ticket 274634)
 
 Hello Nexus Mods Support,
 
-My previous upload was quarantined by the automated safety checks. I have
-prepared an updated v1.1.0 and published its corresponding separated source
-and build instructions. Could you please manually review the updated file?
+I would like to update my manual-review request for COTW AnimalRadar,
+Mod ID 1194. The current maintenance release is v1.1.1, which fixes the
+main window not reopening when the user launches the radar again.
 
 Nexus username: Zacks
 Mod page: https://www.nexusmods.com/thehuntercallofthewild/mods/1194
+Versioned source: https://github.com/msolx/COTW-AnimalRadar/tree/v1.1.1
+Build instructions:
+https://github.com/msolx/COTW-AnimalRadar/blob/v1.1.1/BUILD.md
+Source/binary evidence and test results:
+https://github.com/msolx/COTW-AnimalRadar/blob/v1.1.1/docs/VALIDATION_v1.1.1.md
 
-Source code: https://github.com/msolx/COTW-AnimalRadar
-Build instructions: https://github.com/msolx/COTW-AnimalRadar/blob/main/BUILD.md
-Source/artifact verification:
-https://github.com/msolx/COTW-AnimalRadar/blob/main/docs/SOURCE_PROVENANCE.md
+This is the radar-only, read-only application, separate from SoloHelper.
+It reads loaded-animal data using standard Windows ReadProcessMemory
+and draws an independent Qt overlay. It does not write game memory,
+inject DLLs, install drivers, hook game functions or directly edit saves.
 
-This is a read-only exploration radar. It reads loaded-animal data using
-standard Windows APIs and draws an independent Qt desktop overlay. It
-does not write game memory, inject DLLs, install drivers or modify saves.
+The new single-instance activation uses a current-user local Windows named
+pipe through Qt. A second launch requests restoration of the existing
+window and exits; it does not start another scanner or open a network port.
+Normal Windows foreground APIs are used, without simulated input or
+protection bypasses. The source includes English/Chinese instructions
+and third-party license notices.
 
-The Windows application uses Python 3.12 x64, PySide6-Essentials 6.8.3 and
-PyInstaller 6.22.3 in onedir mode, with UPX disabled. The separated source
-build was tested successfully. Original game assets, saves, private
-settings, diagnostics and credentials are not included in the repository.
-Compatibility with unverified game versions is explicitly experimental.
+The release was built with Python 3.12 x64, PySide6-Essentials 6.8.3 and
+PyInstaller 6.22.3 in onedir mode, without UPX. All 117 source tests passed.
+The actual packaged EXE was also tested for minimize/relaunch/restore and
+normal shutdown on Windows. All 26 embedded application modules match the
+published runtime source by bytecode/constants comparison.
 
-The locally reviewed COTW_AnimalRadar.exe has SHA-256:
-d7612ce5eecdc0053ff1931729fae1efb16fc8cfc9370ab9411f1b52f59dd39c
+File: COTW_AnimalRadar_v1.1.1.zip
+ZIP SHA-256:
+6db2753ecb4449e93608d51963fd0ad2c3789a661bf3a8ce5cbc543f1deab2ef
+EXE SHA-256:
+cd9595711125060108babc87da9c7bfb1f9bf2c4cbca3c3667e3e69bd3514104
 
-All 26 embedded application modules matched the published runtime source
-by bytecode/constants comparison. This is not a claim of byte-identical
-rebuilds or antivirus clearance. If the submitted file has a specific
-detection, please let me know what additional information is needed.
+No antivirus clearance or universal game-version compatibility is claimed.
+Could you please review the updated file? If a particular detection or
+additional build information is needed, please let me know.
 
 Thank you for your help.
 

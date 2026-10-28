@@ -6,6 +6,8 @@ This repository contains the **radar only**. It does not contain Solo Helper, te
 
 [中文说明](docs/README.zh-CN.md) · [Build instructions](BUILD.md) · [Source/binary relationship](docs/SOURCE_PROVENANCE.md) · [Third-party notices](THIRD_PARTY_NOTICES.md)
 
+**v1.1.1:** launching the same installation again restores and activates its existing main window instead of silently exiting. This uses a current-user local named pipe, opens no TCP port, and creates no second game scanner. Close a running v1.1.0 instance once before upgrading. Windows foreground policy can still require using the taskbar/Alt+Tab; input is never simulated or forcibly attached.
+
 ## Supported environment
 
 - Windows 10/11 x64; single-player use. Steam/Epic/custom installation directories can be detected or selected; this is not a claim of all-channel live validation.

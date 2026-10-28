@@ -1,10 +1,9 @@
 {
-  "version": "1.1.0",
-  "artifact": "COTW_Toolkit/COTW_AnimalRadar.exe",
-  "executable_sha256": "d7612ce5eecdc0053ff1931729fae1efb16fc8cfc9370ab9411f1b52f59dd39c",
-  "original_game_assets_included": false,
-  "original_private_git_history_included": false,
-  "binary_comparison_method": "Python bytecode, names, flags, exception table and recursive constants; ignores filenames and line tables",
+  "version": "1.1.1",
+  "artifact": "COTW_AnimalRadar/COTW_AnimalRadar.exe",
+  "executable_sha256": "cd9595711125060108babc87da9c7bfb1f9bf2c4cbca3c3667e3e69bd3514104",
+  "release_zip_sha256": "6db2753ecb4449e93608d51963fd0ad2c3789a661bf3a8ce5cbc543f1deab2ef",
+  "release_zip_bytes": 37194009,
   "module_comparison": [
     {
       "module": "config",
@@ -44,11 +43,6 @@
     {
       "module": "services.attribute_resolver",
       "source": "services/attribute_resolver.py",
-      "instructions_and_constants_match": true
-    },
-    {
-      "module": "services.calibration",
-      "source": "services/calibration.py",
       "instructions_and_constants_match": true
     },
     {
@@ -107,6 +101,11 @@
       "instructions_and_constants_match": true
     },
     {
+      "module": "services.single_instance",
+      "source": "services/single_instance.py",
+      "instructions_and_constants_match": true
+    },
+    {
       "module": "services.species",
       "source": "services/species.py",
       "instructions_and_constants_match": true
@@ -136,5 +135,11 @@
       "source": "main.py",
       "instructions_and_constants_match": true
     }
-  ]
+  ],
+  "qt_local_ipc_bundled": true,
+  "crc_passed": true,
+  "privacy_hits": [],
+  "original_game_assets_included": false,
+  "original_private_git_history_included": false,
+  "binary_comparison_method": "Python bytecode, names, flags, exception table and recursive constants; ignores paths/line tables"
 }

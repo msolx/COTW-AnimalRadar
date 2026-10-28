@@ -70,7 +70,7 @@ Get-FileHash .\dist\COTW_AnimalRadar\COTW_AnimalRadar.exe -Algorithm SHA256
 
 Any new build may have different EXE/ZIP bytes due to environment and packaging metadata. These instructions support rebuilding and code inspection; they do **not** promise a bit-for-bit identical executable or an antivirus result.
 
-For the examined v1.1.0 executable hashes and the source comparison, see [docs/SOURCE_PROVENANCE.md](docs/SOURCE_PROVENANCE.md). A rebuilt file's hash must not be represented as the old uploaded file's hash.
+For the examined v1.1.1 artifact hashes and the source comparison, see [docs/SOURCE_PROVENANCE.md](docs/SOURCE_PROVENANCE.md). A rebuilt file's hash must not be represented as the old uploaded file's hash.
 
 ## Review boundaries
 
@@ -79,3 +79,7 @@ For the examined v1.1.0 executable hashes and the source comparison, see [docs/S
 - `services/population_file.py`: read-only SAVE/ADF population parser with stable-file checks.
 - No Solo Helper modules, archive patcher, teleportation, pressure editor or memory writer are included.
 - The local unit test result is not a substitute for a fresh-machine installation check or real-game validation. A code review or build does not clear a Nexus quarantine automatically.
+
+## v1.1.1 main-window activation
+
+QtNetwork is part of PySide6-Essentials and is bundled for QLocalServer/QLocalSocket local IPC; no new pip dependency or Internet listener is used. Seven single-instance tests use local sockets, child Python processes and Qt test windows without accessing the game. Close the previous v1.1.0 instance once before running the new build.

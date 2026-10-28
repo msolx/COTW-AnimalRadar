@@ -83,3 +83,7 @@ For the examined v1.1.1 artifact hashes and the source comparison, see [docs/SOU
 ## v1.1.1 main-window activation
 
 QtNetwork is part of PySide6-Essentials and is bundled for QLocalServer/QLocalSocket local IPC; no new pip dependency or Internet listener is used. Seven single-instance tests use local sockets, child Python processes and Qt test windows without accessing the game. Close the previous v1.1.0 instance once before running the new build.
+
+## Released source versus current documentation
+
+For the already-published binary, check out **v1.1.1**. The `docs-2026-10-28` snapshot changes documentation, comments and the project author metadata only. Published tags/assets were not rebuilt or replaced; current source attribution applies to future builds. Artifact identities and the scope of tests are in [SOURCE_PROVENANCE.md](docs/SOURCE_PROVENANCE.md).

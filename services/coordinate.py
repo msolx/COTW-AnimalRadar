@@ -1,4 +1,4 @@
-"""X/Z 暂作水平坐标，轴的地理方向未校准，不标注东南西北。"""
+"""X/Z水平距离、相对坐标及网格聚合；地理朝向由界面校准设置控制。"""
 import math
 from dataclasses import dataclass
 from config import GRID_METERS, MAX_COORDINATE

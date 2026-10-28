@@ -1,3 +1,5 @@
+> Historical record for v1.1.0. The current application release is v1.1.1; see [its validation](VALIDATION_v1.1.1.md).
+
 # v1.1.0 validation summary
 
 Date: 2026-10-28. Separate source tree: **COTW-AnimalRadar**.

@@ -1,4 +1,4 @@
-"""历史偏移默认禁用；只有精确哈希和完整人工验证记录均匹配才放行。"""
+"""版本化偏移加载；正式配置需验证，候选或未知构建仅按实验回退规则尝试。"""
 import json
 import re
 from pathlib import Path
@@ -30,7 +30,7 @@ def load_offsets(directory: Path, sha256: str):
 
 
 def load_field_test_offsets(directory: Path, sha256: str, allow_fallback: bool = False):
-    """现场测试优先精确哈希匹配；若开启降级（如第三方渠道或候选实验），自动采用兼容配置以安全运行。"""
+    """现场测试优先精确哈希匹配；若开启降级（如第三方渠道或候选实验），按实验规则尝试既有布局；不保证字段语义兼容。"""
     fallback_candidate = None
     for file in sorted(directory.glob('field_test_*.json')):
         data = json.loads(file.read_text(encoding='utf-8'))

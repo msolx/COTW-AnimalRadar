@@ -1,9 +1,19 @@
 {
   "version": "1.1.1",
+  "release_url": "https://github.com/msolx/COTW-AnimalRadar/releases/tag/v1.1.1",
   "artifact": "COTW_AnimalRadar/COTW_AnimalRadar.exe",
-  "executable_sha256": "cd9595711125060108babc87da9c7bfb1f9bf2c4cbca3c3667e3e69bd3514104",
+  "release_asset": "COTW_AnimalRadar_v1.1.1.zip",
   "release_zip_sha256": "6db2753ecb4449e93608d51963fd0ad2c3789a661bf3a8ce5cbc543f1deab2ef",
   "release_zip_bytes": 37194009,
+  "executable_sha256": "cd9595711125060108babc87da9c7bfb1f9bf2c4cbca3c3667e3e69bd3514104",
+  "source_tag": "v1.1.1",
+  "source_commit": "88c56e59ac0950803257050548c9c6eeb2493a1b",
+  "source_url": "https://github.com/msolx/COTW-AnimalRadar/tree/v1.1.1",
+  "verification_date": "2026-10-28",
+  "github_release_asset_digest_verified": true,
+  "local_release_zip_available": true,
+  "crc_passed": true,
+  "binary_comparison_method": "Bytecode, names, flags, exception table and recursive constants; ignores filenames/line tables",
   "module_comparison": [
     {
       "module": "config",
@@ -136,10 +146,9 @@
       "instructions_and_constants_match": true
     }
   ],
-  "qt_local_ipc_bundled": true,
-  "crc_passed": true,
-  "privacy_hits": [],
+  "live_game_features_retested": false,
+  "published_exe_executed_during_this_review": false,
+  "release_repacked_or_replaced": false,
   "original_game_assets_included": false,
-  "original_private_git_history_included": false,
-  "binary_comparison_method": "Python bytecode, names, flags, exception table and recursive constants; ignores paths/line tables"
+  "distribution_license_file_sha256": "2d94e1cd9ac8dadaf35ecd502f60cc6b71e38112feef1f3e2b93bac519fa17ac"
 }

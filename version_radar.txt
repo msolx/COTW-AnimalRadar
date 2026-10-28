@@ -16,11 +16,11 @@ VSVersionInfo(
         StringTable(
           '040904B0',
           [
-            StringStruct('CompanyName', 'COTW Community Tools'),
+            StringStruct('CompanyName', 'msolx'),
             StringStruct('FileDescription', 'theHunter: Call of the Wild Animal Radar & Overlay'),
             StringStruct('FileVersion', '1.1.1.0'),
             StringStruct('InternalName', 'COTW_AnimalRadar'),
-            StringStruct('LegalCopyright', 'Open Source Tool'),
+            StringStruct('LegalCopyright', 'Copyright (c) 2026 msolx'),
             StringStruct('OriginalFilename', 'COTW_AnimalRadar.exe'),
             StringStruct('ProductName', 'COTW Animal Radar'),
             StringStruct('ProductVersion', '1.1.1.0')
